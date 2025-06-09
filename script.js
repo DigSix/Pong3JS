@@ -159,6 +159,9 @@ class  HudAndGameController {
     constructor(){
         this.pauseState = false;
         this.pauseKey = "p";
+        this.gameMenuModal = new bootstrap.Modal('#gameMenuModal', {
+            keyboard: false
+        })
     }
 
     updateLifes(player1, player2){
@@ -196,25 +199,22 @@ class  HudAndGameController {
 
     }
 
-    updatePauseState(keysPressed){
-        if(keysPressed[this.pauseKey]){
-            const mainMenu = document.getElementById("gameMenu");
-            switch(this.pauseState){
-                case false:
-                    this.pauseState = true;
-                    mainMenu.style.visibility = "visible";
-                    break;
-                case true:
-                    this.pauseState = false;
-                    mainMenu.style.visibility = "hidden";
-                    break;
-            }
+    updatePauseState(keysToggled){
+        switch(keysToggled[this.pauseKey]){
+            case false:
+                this.pauseState = true;
+                this.gameMenuModal.show();
+                break;
+            case true:
+                this.pauseState = false;
+                this.gameMenuModal.hide();
+                break;
         }
     }
 
-    updateHudAndGame(player1, player2, keysPressed){
+    updateHudAndGame(player1, player2, keysPressed, keysToggled){
         this.updateLifes(player1, player2); 
-        this.updatePauseState(keysPressed);
+        this.updatePauseState(keysToggled);
         this.updateGameOver(player1, player2);
     }
 }
@@ -262,9 +262,15 @@ const hudAndGameController = new HudAndGameController();
 
 // Controle de teclas
 const keysPressed = {};
+const keysToggled = { p: false };
 
 document.addEventListener("keydown", (event) => {
   keysPressed[event.key] = true;
+
+  if (keysToggled.hasOwnProperty(event.key) && !event.repeat) {
+    keysToggled[event.key] = !keysToggled[event.key];
+    console.log(keysToggled);
+  }
 });
 
 document.addEventListener("keyup", (event) => {
@@ -275,7 +281,7 @@ document.addEventListener("keyup", (event) => {
 function animate() {
   requestAnimationFrame(animate);
 
-  hudAndGameController.updateHudAndGame(player1, player2, keysPressed);
+  hudAndGameController.updateHudAndGame(player1, player2, keysPressed, keysToggled);
   
   if(player1.lifes > 0 && player2.lifes > 0 && !hudAndGameController.pauseState){
     player1.move(keysPressed);
