@@ -147,7 +147,8 @@ class Camera {
 
     followBall(ball) {
         // Mantém a posição fixa e apenas olha para a bola
-        this.camera.position.set(ball.mesh.position.x, 0, 5);
+        //this.camera.position.set(ball.mesh.position.x, 0, 5);
+        this.camera.lookAt(ball.mesh.position.x, 0, ball.mesh.position.z);
     }
 
     getCamera() {
@@ -201,11 +202,11 @@ class  HudAndGameController {
 
     updatePauseState(keysToggled){
         switch(keysToggled[this.pauseKey]){
-            case false:
+            case true:
                 this.pauseState = true;
                 this.gameMenuModal.show();
                 break;
-            case true:
+            case false:
                 this.pauseState = false;
                 this.gameMenuModal.hide();
                 break;
@@ -262,7 +263,8 @@ const hudAndGameController = new HudAndGameController();
 
 // Controle de teclas
 const keysPressed = {};
-const keysToggled = { p: false };
+const keysToggled = { p: true };
+const resumeBtn = document.getElementById("resumeButton");
 
 document.addEventListener("keydown", (event) => {
   keysPressed[event.key] = true;
@@ -277,11 +279,17 @@ document.addEventListener("keyup", (event) => {
   keysPressed[event.key] = false;
 });
 
+resumeBtn.addEventListener("click", () => {
+    keysToggled.p = false;
+});
+
+
 // Animação
 function animate() {
   requestAnimationFrame(animate);
 
   hudAndGameController.updateHudAndGame(player1, player2, keysPressed, keysToggled);
+  
   
   if(player1.lifes > 0 && player2.lifes > 0 && !hudAndGameController.pauseState){
     player1.move(keysPressed);
@@ -289,7 +297,7 @@ function animate() {
     ball.move(player1, player2);
     //camera.followBall(ball);
   }
-  
+
   renderer.render(scene, cameraInstance);
 }
 
