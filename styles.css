@@ -1,3 +1,23 @@
+*{
+    z-index: 1;
+}
+
+button {
+    all: unset;
+    box-sizing: border-box;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    text-align: inherit;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
 body { 
     margin: 0; 
     overflow: hidden; 
@@ -13,7 +33,7 @@ body {
     justify-content: center;
     align-items: center;
     pointer-events: none;
-    z-index: 1000;
+    z-index: 10000 !important;
 }
 
 .players-lifes {
@@ -69,4 +89,11 @@ body {
     background-color: rgba(0,0,0,0.5);
     border-radius: 3px;
     padding: 0.5rem;
+    z-index: 3 !important;
+}
+
+.game-button:hover {
+    transform: scale(1.08);
+    transition: transform 0.15s;
+    text-shadow: 0 0 8px #fff, 0 0 16px #fff, 2px 2px 4px rgba(0,0,0,0.5);
 }
