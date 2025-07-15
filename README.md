@@ -1,15 +1,15 @@
-# 🕹️ Six's Pong 3JS
+# 🎮 Six's Pong 3JS
 
 Com a inspiração do projeto [pong-do-morgs](https://github.com/schaldach/pong-do-morgs) criado pelo meu amigo [@schaldach](https://github.com/schaldach),
 esse projeto é uma versão 3D do clássico **Pong**, feita com **Three.js**.  <br>
 A ideia foi aprender a usar o Three.js na prática e brincar com movimentação, colisão e física em um ambiente 3D.<br>
 Explorando as possibilidades do Three.js, já me rendeu muitas risadas na faculdade.<br>
 
-🎮 [Clique aqui para jogar (versão GitHub Pages)](https://digsix.github.io/Pong3JS/)
+ [Clique aqui para jogar (versão GitHub Pages)](https://digsix.github.io/Pong3JS/)
 
 ---
 
-## ✨ O que tem
+##  O que tem
 
 - Arena 3D com perspectiva
 - Dois players controláveis com teclado (Setinhas e WASD)
@@ -18,7 +18,7 @@ Explorando as possibilidades do Three.js, já me rendeu muitas risadas na faculd
 
 ---
 
-## 🎯 Tecnologias usadas
+##  Tecnologias usadas
 
 - [Three.js](https://threejs.org/) — pra renderizar o 3D
 - HTML + CSS básico + Bootsrap
