@@ -1,31 +1,46 @@
-# 🎮 Six's Pong 3JS
+<h1 align="center">Six's Pong 3JS</h1>
 
-Com a inspiração do projeto [pong-do-morgs](https://github.com/schaldach/pong-do-morgs) criado pelo meu amigo [@schaldach](https://github.com/schaldach),
-esse projeto é uma versão 3D do clássico **Pong**, feita com **Three.js**.  <br>
-A ideia foi aprender a usar o Three.js na prática e brincar com movimentação, colisão e física em um ambiente 3D.<br>
-Explorando as possibilidades do Three.js, já me rendeu muitas risadas na faculdade.<br>
-
- [Clique aqui para jogar (versão GitHub Pages)](https://digsix.github.io/Pong3JS/)
+<p align="center">
+  <a href="https://digsix.github.io/Pong3JS/">Play on GitHub Pages</a>
+</p>
 
 ---
 
-##  O que tem
+## About
 
-- Arena 3D com perspectiva
-- Dois players controláveis com teclado (Setinhas e WASD)
-- Bola com colisão básica e velocidade crescente
-- Pontuação de ambos os lados
+**Six's Pong 3JS** is a 3D reinterpretation of the classic **Pong**, built with **Three.js**.
 
----
+The project was inspired by  
+[pong-do-morgs](https://github.com/schaldach/pong-do-morgs), created by my friend  
+[@schaldach](https://github.com/schaldach).
 
-##  Tecnologias usadas
-
-- [Three.js](https://threejs.org/) — pra renderizar o 3D
-- HTML + CSS básico + Bootsrap
-- JavaScript puro
+The main goal was to explore Three.js in practice — experimenting with 3D rendering, movement, collision, and basic physics logic in a browser environment.  
+It started as a learning exercise and quickly became a fun sandbox during college.
 
 ---
 
-## ❤️ Melhorias
+## Features
 
-O projeto ainda está em andamento, assim que finalizar o essencial estarei adicionando aqui a lista de melhorias já solicitadas pelos meus amigos.
+- 3D arena with perspective camera  
+- Two-player local controls (Arrow keys and WASD)  
+- Ball with basic collision and increasing speed  
+- Score tracking for both players  
+
+---
+
+## Stack
+
+- [Three.js](https://threejs.org/)  
+- JavaScript (vanilla)  
+- HTML and CSS  
+- Bootstrap (basic layout)
+
+---
+
+## Status
+
+This project is still evolving. Once the core gameplay is fully stabilized, planned improvements and refinements will be documented here.
+
+---
+
+Maintained by [DigSix](https://github.com/DigSix)
