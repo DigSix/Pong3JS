@@ -6,8 +6,7 @@
 **Six's Pong 3JS** is a 3D reinterpretation of the classic **Pong**, built with **Three.js**.
 
 The project was inspired by  
-[pong-do-morgs](https://github.com/schaldach/pong-do-morgs), created by my friend  
-[@schaldach](https://github.com/schaldach).
+[pong-do-morgs](https://github.com/schaldach/pong-do-morgs), created by my friend [@schaldach](https://github.com/schaldach).
 
 The main goal was to explore Three.js in practice — experimenting with 3D rendering, movement, collision, and basic physics logic in a browser environment.  
 It started as a learning exercise and quickly became a fun sandbox during college.
